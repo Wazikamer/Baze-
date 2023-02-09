@@ -1,8 +1,10 @@
-function checkForm(el) {
-  var name = el.name.value;
-  var price = el.price.value;
-  var date = el.date.value;
-  var fail = "";
+document.getElementById("submit").addEventListener("click", submit);
+
+function submit() {
+  let name = document.getElementById("name").value;
+  let price = document.getElementById("price").value;
+  let date = document.getElementById("date").value;
+  let fail = "";
 
   if (name == "" || price == "" || date == "")
     fail = "Будь ласка, заповніть всі поля";
@@ -16,22 +18,15 @@ function checkForm(el) {
 
   if (fail != "") {
     document.getElementById("error").innerHTML = fail;
+  } else {
+    const newDiv = document.createElement("div");
+    newDiv.innerHTML =
+      "Доданий товар: " + name + " Ціна: " + price + " Дата виготовлення: " + date;
+    newDiv.classList.add("product");
+    const wrapper = document.getElementById("item");
+    wrapper.appendChild(newDiv);
+    document.getElementById("name").value = ""
+    document.getElementById("price").value = ""
+    document.getElementById("date").value = ""
   }
-
-  return false;
-}
-
-document.getElementById("submit").addEventListener("click", q);
-
-function q() {
-  let a = document.querySelector(".input").value;
-  let b = document.querySelector(".input-1").value;
-  let c = document.querySelector(".input-2").value;
-  if (a == "" || b == "" || c == "") return;
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML =
-    "Доданий товар: " + a + " Ціна: " + b + " Дата виготовлення: " + c;
-  newDiv.classList.add("product");
-  const wrapper = document.getElementById("item");
-  wrapper.appendChild(newDiv);
 }
