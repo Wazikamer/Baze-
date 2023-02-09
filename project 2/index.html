@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+        <form id="main-form" onsubmit="return checkForm(this)" method="post">
+          <label for="name">Назва продукту:</label>
+          <input class="input" type="text" name="name" id="name" />
+          <br />
+          <br />
+          <label for="number">Ціна продукту:</label>
+          <input class="input-1" type="number" name="price" id="price" />
+          <br />
+          <br />
+          <label for="date">Дата виготовлення:</label>
+          <input class="input-2" type="date" name="date" id="date" />
+          <br />
+          <div id="error" class="error"></div>
+          <br />
+          <input id="submit" type="submit" value="Відправити" />
+          <input type="reset" value="Скинути" />
+        </form>
+      </div>
+      <div class="right">
+        <div class="box">
+          <div id="item" class="item"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js.js"></script>
+  </body>
+</html>
