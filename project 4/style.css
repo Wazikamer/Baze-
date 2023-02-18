@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: cornsilk;
+}
+
+.main {
+  margin: 0 auto;
+  background-image: url(imgs/Cyber-Security.jpeg);
+}
+
+.slider {
+  position: relative;
+  max-width: 900px;
+
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider__line {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+}
+
+.slider__bnt-prev {
+  position: absolute;
+  left: 1%;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.slider__bnt-prev img {
+  width: 40px;
+  height: 30px;
+}
+
+.slider__bnt-next {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider__bnt-next img {
+  width: 40px;
+  height: 30px;
+}
+
+.slider__wrapper {
+  display: flex;
+  column-gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+}
+
+.slider__dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #e9f842;
+}
+
+.slider__dot:hover {
+  background-color: #e9f842;
+}
+
+.active-dot {
+  background-color: #e9f842;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.btn {
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  padding: 12px 20px;
+  min-width: 200px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.btn1::before {
+  transform: scaleX(0);
+}
+.btn2::before {
+  transform: scaleY(0);
+}
+
+.btn1:hover:before {
+  transform: scaleX(1);
+}
+.btn2:hover:before {
+  transform: scaleY(1);
+}

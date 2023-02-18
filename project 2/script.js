@@ -21,12 +21,23 @@ function submit() {
   } else {
     const newDiv = document.createElement("div");
     newDiv.innerHTML =
-      "Доданий товар: " + name + " Ціна: " + price + " Дата виготовлення: " + date;
+      "Доданий товар: " +
+      name +
+      " Ціна: " +
+      price +
+      " Дата виготовлення: " +
+      date;
     newDiv.classList.add("product");
     const wrapper = document.getElementById("item");
     wrapper.appendChild(newDiv);
-    document.getElementById("name").value = ""
-    document.getElementById("price").value = ""
-    document.getElementById("date").value = ""
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("date").value = "";
   }
 }
+
+const btn = document.getElementById("btn");
+
+bnt.addEventListener('mouseenter', () => {
+  btn.style.left = ${random(0, 90)}
+})
