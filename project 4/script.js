@@ -89,7 +89,7 @@ function prevSlide() {
 }
 
 function rollSlider() {
-  sliderLine.style.transform = "translateX(${-sliderCount * sliderWidth}px)";
+  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px);
 }
 
 function thisSlide(index) {
@@ -103,4 +103,4 @@ sliderDots.forEach((dot, index) => {
     rollSlider();
     thisSlide(sliderCount);
   });
-});
+}
