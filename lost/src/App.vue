@@ -33,10 +33,10 @@ export default {
   },
   computed: {
     currentQuestionIndex() {
-      this.answers.length;
+      return this.answers.length;
     },
     arrAnswersCopmleted() {
-      return this.answers.length === this.questions.length;
+      return this.answers.length !== this.questions.length;
     },
   },
 };
