@@ -1,5 +1,5 @@
 window.onload = function () {
-  const parallax = document.querySelector(".parallax");
+  const parallax = document.querySelector("body");
   const content = document.querySelector(".parallax__container");
   const clouds = document.querySelector(".images-parallax__clouds");
   const city = document.querySelector(".images-parallax__city");
@@ -24,17 +24,13 @@ window.onload = function () {
     positionX = positionX + distX * speed;
     positionY = positionY + distY * speed;
 
-    clouds.style.cssText =
-      "transform: franslate(${positionX / forClouds}%, ${positionY / forClouds}%)";
-    city.style.cssText =
-      "transform: franslate(${positionX / forCity}%, ${positionY / forCity}%)";
-    human.style.cssText =
-      "transform: franslate(${positionX / forHuman}%, ${positionY / forHuman}%)";
-
-    requestAnimationFrame(setMouseParallaxStyle);
+    clouds.style.transform =
+      `translate(${positionX / forClouds}%, ${positionY / forClouds}%)`;
+    city.style.transform =
+      `translate(${positionX / forCity}%, ${positionY / forCity}%)`;
+    human.style.transform =
+      `translate(${positionX / forHuman}%, ${positionY / forHuman}%)`;
   }
-
-  setMouseParallaxStyle();
 
   parallax.addEventListener("mousemove", function (e) {
     const parallaxWidth = parallax.offsetWidth;
@@ -45,6 +41,8 @@ window.onload = function () {
 
     coordXprocent = (coordX / parallaxWidth) * 100;
     coordYprocent = (coordY / parallaxHeight) * 100;
+
+    setMouseParallaxStyle();
   });
 };
 
@@ -89,7 +87,7 @@ function prevSlide() {
 }
 
 function rollSlider() {
-  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px);
+  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
 }
 
 function thisSlide(index) {
